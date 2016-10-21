@@ -1,1 +1,14 @@
-//
+// registration
+import org.json.simple.JSONObject;
+
+JSONObject obj = new JSONObject();
+String s = ""0e18ad08a5e9c72f2e224c6b85f89b2d";
+obj.put("token", s);
+obj.put("github", "https://github.com/DianaAlvarezCaraveo/Code2040.git");
+
+String url = "http://challenge.code2040.org/api/register";
+HttpClient client = HttpClientBuilder.create().build();
+HttpPost post = new HttpPost(url);
+StringEntity postString = new StringEntity(obj);
+post.setEntity(postString);
+HttpResponse response = httpClient.execute(post);
